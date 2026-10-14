@@ -20,7 +20,13 @@ This creates a `.venv/` and installs runtime and dev dependencies from `uv.lock`
 No ASGI server is declared as a dependency, so pull in `uvicorn` on the fly:
 
 ```bash
-uv run --with uvicorn uvicorn lab_claude.app.main:app --reload
+./run.sh
+```
+
+Additional Uvicorn options can be passed to the script, for example:
+
+```bash
+./run.sh --host 0.0.0.0 --port 8080
 ```
 
 Then check the endpoint:
@@ -30,7 +36,7 @@ curl http://localhost:8000/health
 # {"status":"ok"}
 ```
 
-Interactive docs are available at http://localhost:8000/docs.
+Interactive docs open at the root URL: http://localhost:8000/.
 
 ## Endpoints
 
