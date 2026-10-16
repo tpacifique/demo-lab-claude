@@ -14,4 +14,4 @@ def test_docs_at_root() -> None:
 def test_health() -> None:
     response = client.get("/health")
     assert response.status_code == 200
-    assert response.json().get("status") == "ok"
+    assert response.json() == {"status": "ok", "message": "Server is alive and working"}

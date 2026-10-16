@@ -33,16 +33,16 @@ Then check the endpoint:
 
 ```bash
 curl http://localhost:8000/health
-# {"status":"ok"}
+# {"status":"ok","message":"Server is alive and working"}
 ```
 
 Interactive docs open at the root URL: http://localhost:8000/.
 
 ## Endpoints
 
-| Method | Path      | Response             |
-| ------ | --------- | -------------------- |
-| GET    | `/health` | `{"status": "ok"}`   |
+| Method | Path      | Response |
+| ------ | --------- | -------- |
+| GET    | `/health` | `{"status": "ok", "message": "Server is alive and working"}` |
 
 ## Tests
 
