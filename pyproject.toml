@@ -1,7 +1,7 @@
 [project]
 name = "lab-claude"
 version = "0.1.0"
-description = "Add your description here"
+description = "Demo project built with Claude AI: a small FastAPI app with a /health endpoint"
 readme = "README.md"
 authors = [
     { name = "tpacifique", email = "tpacifique@users.noreply.github.com" }
