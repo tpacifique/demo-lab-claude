@@ -57,6 +57,28 @@ uv run ruff check .
 uv run ruff format .
 ```
 
+## Scanning for secrets with Gitleaks
+
+[Gitleaks](https://github.com/gitleaks/gitleaks) scans Git repositories for
+potentially exposed secrets, such as API tokens, passwords, and private keys.
+Install Gitleaks separately, then run this from the repository root:
+
+```bash
+gitleaks detect --source .
+```
+
+`detect` runs a repository scan, and `--source .` tells Gitleaks to use the
+current directory as its source. Review the findings rather than assuming every
+match is a real credential; verify suspected false positives before adding a
+narrow allowlist exception.
+
+Run the scan regularly and before pushing changes. Treat any confirmed secret
+as compromised: revoke or rotate it promptly, remove it from the relevant
+files, and follow your team's process for addressing it in Git history. Do not
+paste scan output into public issues or logs, or commit a report that could
+contain sensitive details. For CI, fail the job when the scan reports a
+finding, and use Gitleaks' redaction option if output might be exposed.
+
 ## Project structure
 
 ```
